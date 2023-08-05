@@ -1,9 +1,14 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import Registration from "../Pages/Registration";
+import Login from "../Pages/Login";
+import Navbar from "../Components/Navbar";
+import Home from "../Pages/Home";
+import ProtectedRoute from "../Components/ProtectedRoute";
 
 const Layout = () => {
   return (
     <>
-      <h1>Navbar</h1>
+      <Navbar />
       <Outlet />
     </>
   );
@@ -12,11 +17,11 @@ const Layout = () => {
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <h1>Login</h1>,
+    element: <Login />,
   },
   {
     path: "/register",
-    element: <h1>Register</h1>,
+    element: <Registration />,
   },
   {
     path: "/",
@@ -24,7 +29,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <h1>Home</h1>,
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/jobs",
