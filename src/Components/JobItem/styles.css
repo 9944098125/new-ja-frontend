@@ -1,0 +1,19 @@
+.item-container {
+  background: transparent;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px var(--primary-color);
+  backdrop-filter: blur(15.9px);
+  -webkit-backdrop-filter: blur(15.9px);
+  border: 1px solid var(--primary-dark-color);
+  min-height: 200px;
+  width: 85%;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@media screen and (max-width: 875px) {
+  .item-container {
+    width: 95%;
+  }
+}

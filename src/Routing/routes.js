@@ -4,6 +4,11 @@ import Login from "../Pages/Login";
 import Navbar from "../Components/Navbar";
 import Home from "../Pages/Home";
 import ProtectedRoute from "../Components/ProtectedRoute";
+import Jobs from "../Pages/Jobs";
+import JobDetails from "../Pages/Jobs/JobDetails";
+import Create from "../Pages/Jobs/Create";
+import PostedJobs from "../Pages/Jobs/PostedJobs";
+import EditJob from "../Pages/Jobs/EditJob";
 
 const Layout = () => {
   return (
@@ -37,11 +42,43 @@ const router = createBrowserRouter([
       },
       {
         path: "/jobs",
-        element: <h1>Jobs</h1>,
+        element: (
+          <ProtectedRoute>
+            <Jobs />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/jobs/:id",
-        element: <h1>More Job Details</h1>,
+        element: (
+          <ProtectedRoute>
+            <JobDetails />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/create",
+        element: (
+          <ProtectedRoute>
+            <Create />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/getEmployerJobs",
+        element: (
+          <ProtectedRoute>
+            <PostedJobs />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/edit/:id",
+        element: (
+          <ProtectedRoute>
+            <EditJob />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

@@ -1,4 +1,4 @@
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAIL } from "./Types";
+import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "./Types";
 import Api from "../Api/Api";
 import { alertActions } from "./alert";
 
@@ -24,4 +24,10 @@ export const login = (body) => async (dispatch) => {
       dispatch(alertActions.clear());
     }, 3000);
   }
+};
+
+export const logout = () => (dispatch) => {
+  dispatch({
+    type: LOGOUT,
+  });
 };

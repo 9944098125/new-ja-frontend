@@ -5,7 +5,7 @@ export default function SetAuthToken(token) {
     localStorage.setItem("jobsToken", token);
     api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   } else {
-    localStorage.removeItem("token");
+    localStorage.removeItem("jobsToken");
     delete api.defaults.headers.common["Authorization"];
   }
 }

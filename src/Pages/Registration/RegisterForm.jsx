@@ -32,7 +32,7 @@ function RegisterForm(props) {
         about: "",
     });
 
-    console.log(dob);
+    // console.log(dob);
     return (
         <React.Fragment>
             <div className="glass-effect p-4">

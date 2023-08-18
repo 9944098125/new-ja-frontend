@@ -30,6 +30,7 @@ export default function Registration() {
     function handleToggleAdmin(e) {
         setIsAdmin(e.target.value === "true");
     }
+
     const validate = (values) => {
         let errors = {};
         if (!values.firstName) errors.firstName = "First Name is required";
@@ -82,7 +83,7 @@ export default function Registration() {
             })
                 .then((res) => res.json())
                 .then((data) => {
-                    console.log(data);
+                    // console.log(data);
                     setImage(data.url);
                     setImageUploadLoading(false);
                 })

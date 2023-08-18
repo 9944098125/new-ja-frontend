@@ -1,0 +1,18 @@
+.navbar-container {
+  height: 65px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  z-index: 2;
+  cursor: pointer;
+}
+.white-box {
+  background-color: white;
+  color: black;
+}
+.black-box {
+  background-color: black;
+  color: white !important;
+}
