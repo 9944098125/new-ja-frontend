@@ -19,7 +19,7 @@ function PostedJobs() {
         if (user === null || !user.isAdmin) {
             navigate('/login', { replace: true })
         }
-    }, [])
+    }, [navigate, user])
 
     return (
         <React.Fragment>
